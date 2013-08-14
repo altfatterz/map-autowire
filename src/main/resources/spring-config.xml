@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <bean id="myImpl1" class="com.backbase.foo.MyImpl1" />
+    <bean id="myImpl2" class="com.backbase.foo.MyImpl2" />
+    <bean id="myImpl3" class="com.backbase.foo.MyImpl3" />
+
+    <!-- to create the Processor -->
+    <context:component-scan base-package="com.backbase.bar" />
+
+    <util:map id="myMap">
+      <entry key="myImpl1" value-ref="myImpl1" />
+      <entry key="myImpl2" value-ref="myImpl2" />
+    </util:map>
+</beans>
